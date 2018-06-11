@@ -92,7 +92,7 @@ func (c apcInrowCollector) collectTarget(target string, ch chan<- prometheus.Met
 		"1.3.6.1.4.1.318.1.1.13.3.2.2.2.11.0", "1.3.6.1.4.1.318.1.1.13.3.2.2.2.16.0", "1.3.6.1.4.1.318.1.1.13.3.2.2.2.24.0",
 		"1.3.6.1.4.1.318.1.1.13.3.2.2.2.26.0"}
 	result, err3 := snmp.Get(oids)
-	if err2 != nil {
+	if err3 != nil {
 		log.Infof("Get() err: %v\n", err3)
 		ch <- prometheus.MustNewConstMetric(upDesc, prometheus.GaugeValue, 0, target)
 		return
